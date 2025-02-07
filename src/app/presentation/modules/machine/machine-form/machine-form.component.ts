@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CreateMachineUseCase } from '../../../../core/use-cases/Machine/create-equipment';
+import { CreateMachineUseCase } from '../../../../core/use-cases/Machine/create-machine';
 import { Machine } from '../../../../core/models/machine';
 
 @Component({

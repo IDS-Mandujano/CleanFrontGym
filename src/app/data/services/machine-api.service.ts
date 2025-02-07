@@ -23,6 +23,10 @@ export class MachineApiService extends MachineRepository {
     return this.http.get<Machine>(`${this.apiUrl}/${id}`);
   }
 
+  override getStatus(id: number): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl}/${id}/status`);
+  }
+
   override create(machine: Machine): Observable<Machine> {
     return this.http.post<Machine>(this.apiUrl, machine);
   }
