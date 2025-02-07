@@ -1,6 +1,6 @@
 export interface Equipment {
     id: number;
-    name: string;
+    cname: string;
     category: string;
-    condition: string;
+    ccondition: string;
   }  

@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EquipmentFormComponent } from './equipment-form/equipment-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EquipmentListComponent } from './equipment-list/equipment-list.component';
 
 
 
 @NgModule({
   declarations: [
-    EquipmentFormComponent
+    EquipmentFormComponent,
+    EquipmentListComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    EquipmentFormComponent
+    EquipmentFormComponent,
+    EquipmentListComponent
   ]
 })
 export class EquipmentModule { }
