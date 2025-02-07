@@ -9,6 +9,7 @@ import { MachineRepository } from './core/repositories/machine.repository';
 import { MachineApiService } from './data/services/machine-api.service';
 import { EquipmentModule } from './presentation/modules/equipment/equipment.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MachineModule } from './presentation/modules/machine/machine.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     EquipmentModule,
+    MachineModule,
     HttpClientModule
   ],
   providers: [

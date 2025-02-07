@@ -15,23 +15,23 @@ export class MachineApiService extends MachineRepository {
     super();
   }
 
-  getAll(): Observable<Machine[]> {
+  override getAll(): Observable<Machine[]> {
     return this.http.get<Machine[]>(this.apiUrl);
   }
 
-  getById(id: number): Observable<Machine> {
+  override getById(id: number): Observable<Machine> {
     return this.http.get<Machine>(`${this.apiUrl}/${id}`);
   }
 
-  create(machine: Machine): Observable<Machine> {
+  override create(machine: Machine): Observable<Machine> {
     return this.http.post<Machine>(this.apiUrl, machine);
   }
 
-  update(machine: Machine): Observable<Machine> {
+  override update(machine: Machine): Observable<Machine> {
     return this.http.put<Machine>(`${this.apiUrl}/${machine.id}`, machine);
   }
 
-  delete(id: number): Observable<void> {
+  override delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

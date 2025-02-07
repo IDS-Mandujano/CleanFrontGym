@@ -1,0 +1,16 @@
+<form [formGroup]="machineForm" (ngSubmit)="onSubmit()">
+  <label for="name">Nombre:</label>
+  <input id="name" type="text" formControlName="name" required />
+
+  <label for="type">Tipo:</label>
+  <input id="type" type="text" formControlName="type" required />
+
+  <label for="status">Estado:</label>
+  <select id="status" formControlName="status">
+    <option *ngFor="let option of statusOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <button type="submit" [disabled]="machineForm.invalid">Guardar</button>
+</form>

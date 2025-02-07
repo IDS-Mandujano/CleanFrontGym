@@ -6,10 +6,16 @@ import { Equipment } from '../../../../core/models/equipment';
 @Component({
   selector: 'app-equipment-form',
   templateUrl: './equipment-form.component.html',
-  styleUrl: './equipment-form.component.css'
+  styleUrls: ['./equipment-form.component.css']
 })
 export class EquipmentFormComponent {
   equipmentForm: FormGroup;
+  conditionOptions = [
+    { value: '1', label: 'Nuevo' },
+    { value: '2', label: 'Bueno' },
+    { value: '3', label: 'Desgastado' },
+    { value: '4', label: 'Roto' }
+  ];
 
   constructor(
     private fb: FormBuilder,
@@ -24,7 +30,10 @@ export class EquipmentFormComponent {
 
   onSubmit() {
     if (this.equipmentForm.valid) {
-      const newEquipment: Equipment = this.equipmentForm.value;
+      const newEquipment: Equipment = {
+        ...this.equipmentForm.value,
+        condition: this.equipmentForm.value.condition
+      };
 
       this.createEquipmentUseCase.execute(newEquipment).subscribe({
         next: (equipment) => console.log('Equipo creado:', equipment),

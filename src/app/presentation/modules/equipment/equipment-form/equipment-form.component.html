@@ -1,12 +1,16 @@
 <form [formGroup]="equipmentForm" (ngSubmit)="onSubmit()">
-    <label>Nombre:</label>
-    <input type="text" formControlName="name" />
-  
-    <label>Categoría:</label>
-    <input type="text" formControlName="category" />
-  
-    <label>Condición:</label>
-    <input type="text" formControlName="condition" />
-  
-    <button type="submit" [disabled]="equipmentForm.invalid">Guardar</button>
-  </form>  
+  <label>Nombre:</label>
+  <input type="text" formControlName="name" />
+
+  <label>Categoría:</label>
+  <input type="text" formControlName="category" />
+
+  <label>Condición:</label>
+  <select formControlName="condition">
+    <option *ngFor="let option of conditionOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <button type="submit" [disabled]="equipmentForm.invalid">Guardar</button>
+</form>
