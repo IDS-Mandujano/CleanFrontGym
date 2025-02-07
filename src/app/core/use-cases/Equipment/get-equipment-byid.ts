@@ -6,10 +6,10 @@ import { EquipmentRepository } from '../../repositories/equipment.repository';
 @Injectable({
   providedIn: 'root',
 })
-export class GetAllEquipmentUseCase {
+export class GetEquipmentByIdUseCase {
   constructor(private equipmentRepository: EquipmentRepository) {}
 
-  execute(): Observable<Equipment[]> {
-    return this.equipmentRepository.getAll();
+  execute(id: number): Observable<Equipment> {
+    return this.equipmentRepository.getById(id);
   }
 }
